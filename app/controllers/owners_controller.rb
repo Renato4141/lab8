@@ -1,5 +1,7 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_owner, only: %i[show edit update destroy]
 
   def index
     @owners = Owner.all

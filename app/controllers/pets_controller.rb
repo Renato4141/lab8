@@ -1,5 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_pet, only: %i[show edit update destroy]
 
   def index
     @pets = params[:species] ? Pet.by_species(params[:species]) : Pet.all
