@@ -40,3 +40,30 @@ t2 = Treatment.create!(appointment: app3, name: "Pain relief", medication: "Ibup
 t3 = Treatment.create!(appointment: app4, name: "Post surgery", medication: "Antibiotics", dosage: "3x daily", administered_at: Time.now, clinical_notes: "Recovery")
 t4 = Treatment.create!(appointment: app2, name: "Vitamin", medication: "Vit C", dosage: "1x daily", administered_at: Time.now, clinical_notes: "Immune boost")
 t5 = Treatment.create!(appointment: app3, name: "Bandage", medication: "None", dosage: "N/A", administered_at: Time.now, clinical_notes: "Wound care")
+
+User.create!(
+  email: "admin@vetclinic.test",
+  password: "password123",
+  password_confirmation: "password123",
+  first_name: "Admin",
+  last_name: "User",
+  role: :admin
+)
+
+User.create!(
+  email: "vet@vetclinic.test",
+  password: "password123",
+  password_confirmation: "password123",
+  first_name: "Veterinarian",
+  last_name: "User",
+  role: :vet
+)
+
+User.create!(
+  email: "owner@vetclinic.test",
+  password: "password123",
+  password_confirmation: "password123",
+  first_name: "PetOwner",
+  last_name: "User",
+  role: :owner
+)
